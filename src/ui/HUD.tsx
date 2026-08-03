@@ -16,24 +16,22 @@ export function HUD({ score, speed, nitro, fps, quality, weapon, onPause }: HUDP
       <div className="hud-top">
         <div className="hud-stat">
           <span className="label">DISTANCE</span>
-          <span className="value">{(score.distance / 1000).toFixed(2)} km</span>
+          <span className={"value"}>{(score.distance / 1000).toFixed(2)} km</span>
         </div>
         <div className="hud-stat center">
           <span className="label">SPEED</span>
-          <span className="value speed">{Math.round(speed)}</span>
+          <span className={"value speed"}>{Math.round(speed)}</span>
           <span className="unit">km/h</span>
         </div>
         <div className="hud-stat right">
           <span className="label">NEAR MISS</span>
-          <span className="value">{score.nearMisses}</span>
+          <span className={"value"}>{score.nearMisses}</span>
           <span className="mult">x{score.multipliers.toFixed(1)}</span>
         </div>
       </div>
 
       {weapon && (
-        <div className="weapon-badge">
-          {weapon}
-        </div>
+        <div className="weapon-badge">{weapon}</div>
       )}
 
       <div className="hud-bottom">
