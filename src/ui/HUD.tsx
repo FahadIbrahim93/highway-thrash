@@ -26,26 +26,13 @@ export function HUD({ score, speed, nitro, fps, quality, weapon, onPause }: HUDP
         <div className="hud-stat right">
           <span className="label">NEAR MISS</span>
           <span className="value">{score.nearMisses}</span>
-          <span className="mult">×{score.multipliers.toFixed(1)}</span>
+          <span className="mult">x{score.multipliers.toFixed(1)}</span>
         </div>
       </div>
 
       {weapon && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '4.5rem',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            background: 'rgba(0,0,0,0.55)',
-            padding: '0.25rem 0.75rem',
-            borderRadius: 6,
-            fontSize: '0.8rem',
-            color: '#ffcc66',
-            letterSpacing: '0.04em'
-          }}
-        >
-          ⚒ {weapon}
+        <div className="weapon-badge">
+          {weapon}
         </div>
       )}
 
@@ -55,14 +42,12 @@ export function HUD({ score, speed, nitro, fps, quality, weapon, onPause }: HUDP
           <span>NITRO</span>
         </div>
         <button className="pause-btn" onClick={onPause} aria-label="Pause">
-          ❚❚
+          PAUSE
         </button>
         <div className="cash">
           ${score.cashEarned}
           {score.combats > 0 && (
-            <span style={{ marginLeft: 8, color: '#ff6b6b', fontSize: '0.85em' }}>
-              ⚔{score.combats}
-            </span>
+            <span className="combat-count">{score.combats}</span>
           )}
         </div>
       </div>
