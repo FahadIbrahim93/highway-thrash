@@ -1,42 +1,35 @@
-# Project status — Highway Thrash
+# Highway Thrash — Status
 
-**Repo:** https://github.com/FahadIbrahim93/highway-thrash  
+**GitHub:** https://github.com/FahadIbrahim93/highway-thrash  
 **Vercel:** https://highway-thrash-hopetheorybd-2156s-projects.vercel.app
 
-## Sync note
+## On `main` now
 
-Core config, CI, UI shells, AdaptiveQuality, Score, Camera, ObjectPool, docs, and license are on `main`.
+- Project config: package.json, vercel.json, vite.config.ts (PWA), tsconfig, CI
+- License (MIT), DEPLOY.md, README, ATTRIBUTION, GDD
+- Core: types, AdaptiveQuality, BikeController, Camera, Score, ObjectPool, PostFX
+- UI: App, MainMenu, HUD, Results, Settings, ErrorBoundary
+- Entry: main.tsx, index.html, index.css
 
-**Full game source** (GameEngine, Traffic, Combat, Weapons, Road, Particles, bikes data, GLBs, App.css) lives in the development workspace zip. To complete the repo in one shot from the zip:
+## Still in workspace zip (one push to finish)
+
+- GameEngine, InputManager, Road/Traffic/Combat/Weapon/Particle systems
+- gameStore, bikes.ts (20 roster), BikeAssetLoader
+- GameCanvas, Garage, App.css
+- GLB models (Kenney + hero)
+
+## Complete the repo (2 min)
 
 ```bash
 unzip highway-thrash-latest.zip && cd road-rash-traffic
-git init
-git remote add origin https://github.com/FahadIbrahim93/highway-thrash.git
-git add -A
-git commit -m "feat: complete vertical slice"
-git branch -M main
-git push -u origin main --force
+git init && git remote add origin https://github.com/FahadIbrahim93/highway-thrash.git
+git add -A && git commit -m "feat: complete vertical slice"
+git branch -M main && git push -u origin main --force
 ```
 
-Then Vercel auto-redeploys from GitHub.
+Vercel will auto-rebuild from GitHub.
 
-## Implemented
+## Product progress
 
-- Endless traffic rush loop
-- Near-miss scoring + combat + weapon pickups
-- 20-bike garage + upgrades
-- Adaptive quality + PostFX bloom (gated)
-- Day/dusk cycle + roadside props
-- Free Kenney / hero GLB pipeline
-- PWA config (vite-plugin-pwa)
-- Crash tumble recovery
-
-## Remaining toward 10/10
-
-- Full source on GitHub (one local push)
-- Audio (engine, hits, UI)
-- Thrash mode rules
-- Rival AI counter-attacks
-- Garage 3D preview
-- Lighthouse PWA audit pass
+Playable vertical slice locally: endless mode, combat, weapons, 20-bike garage, day/dusk, free GLBs, adaptive quality, crash tumble.  
+Toward 10/10: audio, Thrash mode, rival AI, full GitHub sync, Lighthouse PWA pass.
